@@ -4,7 +4,7 @@ greentea Bot for Discord using discord.py!
 
 ### Prerequisites and libraries
 
-Things you need to install the software and how to install them:
+Things you need to run the bot properly:
 
 ```
 discord.py
