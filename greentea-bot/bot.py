@@ -19,7 +19,7 @@ ver = 2.0
 @client.event
 async def on_ready():
     await client.change_presence(status=discord.Status.online,
-                                 activity=discord.Activity(type=discord.ActivityType.watching, name=emoji.emojize("your server! :eyes:")))
+                                 activity=discord.Activity(type=discord.ActivityType.watching, name=emoji.emojize("your server! :eyes: | .help")))
     print("Bot is ready.")
 
 
@@ -95,7 +95,7 @@ async def avatar(ctx, *, avatarmember: discord.Member = None):
     if avatarmember is None:
         avatarmember = ctx.message.author
         em = discord.Embed(title="Full image here",
-                           url="https://cdn.discordapp.com/avatars/{0.id}/{0.avatar}.png?size=1024".format(
+                           url="https://cdn.discordapp.com/avatars/{0.id}/{0.avatar}?size=1024".format(
                                avatarmember),
                            color=0x9ef0b2)
         userAvatarUrl = avatarmember.avatar_url
@@ -103,7 +103,7 @@ async def avatar(ctx, *, avatarmember: discord.Member = None):
         await ctx.send(embed=em)
     else:
         em = discord.Embed(description='requested by:\n{0}'.format(ctx.author), title="Full image here",
-                           url="https://cdn.discordapp.com/avatars/{0.id}/{0.avatar}.png?size=1024".format(
+                           url="https://cdn.discordapp.com/avatars/{0.id}/{0.avatar}?size=1024".format(
                                avatarmember),
                            color=0x9ef0b2)
         userAvatarUrl = avatarmember.avatar_url
@@ -159,13 +159,17 @@ async def help(ctx):
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send(">>> [ ***error.command*** ] Command not found, try checking .help")
+        await ctx.send(">>> [ error.**CommandNotFound** ]")
+        await ctx.send("Command not found, try checking .help")
     elif isinstance(error, commands.MemberNotFound):
-        await ctx.send(">>> [ ***error.user*** ] User not found")
+        await ctx.send(">>> [ error.**MemberNotFound** ]")
+        await ctx.send("User not found")
     elif isinstance(error, commands.BotMissingPermissions):
-        await ctx.send(">>> [ ***error.perm*** ] Insuficient role permissions to execute this command")
+        await ctx.send(">>> [ error.**BotMissingPermissions** ]")
+        await ctx.send("Insuficient role permissions to execute this command")
     elif isinstance(error, commands.BadArgument):
-        await ctx.send(">>> [ ***error.value*** ] The value must be a number")
+        await ctx.send(">>> [ error.**BadArgument** ] ")
+        await ctx.send("The value must be a number")
 
 
 @client.event
@@ -182,10 +186,19 @@ pino = 0
 @client.event
 async def on_message(message):
     global pino
-    if "PINO" in message.content.upper():
+    responses = ['https://media1.tenor.com/images/1c5b339df666dde2a03276e8da9c66bd/tenor.gif?itemid=12660748',
+                 'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660742',
+                 'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660749',
+                 'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660751',
+                 'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660741',
+                 'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660754',
+                 'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660753',
+                 'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660745']
+    if "PINO" in message.content.upper() or "ピノ" in message.content:
         if message.author != client.user:
             pino += 1
             await message.channel.send("PINO! Pino's name has been sent {0} times!".format(pino))
+            await message.channel.send(random.choice(responses))
     await client.process_commands(message)
 
 client.run('Nzg0OTM2OTkzODgzODE1OTM3.X8wjig.MCRmIXPIq0lmtNYygVp2IE7rWNk')
