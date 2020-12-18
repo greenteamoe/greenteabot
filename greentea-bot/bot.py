@@ -159,17 +159,21 @@ async def help(ctx):
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send(">>> [ error.**CommandNotFound** ]")
-        await ctx.send("Command not found, try checking .help")
+        em = discord.Embed(title=emoji.emojize(":wrench: Command not found..."),
+                           description="Please, type .help to see all the commands!", color=0xe74c3c)
+        await ctx.send(embed=em)
     elif isinstance(error, commands.MemberNotFound):
-        await ctx.send(">>> [ error.**MemberNotFound** ]")
-        await ctx.send("User not found")
+        em = discord.Embed(title=emoji.emojize(":no_entry_sign: User not found..."),
+                           description="Please, enter the member name correctly!", color=0xe74c3c)
+        await ctx.send(embed=em)
     elif isinstance(error, commands.BotMissingPermissions):
-        await ctx.send(">>> [ error.**BotMissingPermissions** ]")
-        await ctx.send("Insuficient role permissions to execute this command")
+        em = discord.Embed(title=emoji.emojize(":hammer: Missing permissions..."),
+                           description="Please, the bot is missing permissions!", color=0xe74c3c)
+        await ctx.send(embed=em)
     elif isinstance(error, commands.BadArgument):
-        await ctx.send(">>> [ error.**BadArgument** ] ")
-        await ctx.send("The value must be a number")
+        em = discord.Embed(title=emoji.emojize(":mag: Bad argument..."),
+                           description="The value must be a number!", color=0xe74c3c)
+        await ctx.send(embed=em)
 
 
 @client.event
