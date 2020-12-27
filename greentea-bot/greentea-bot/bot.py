@@ -8,11 +8,14 @@ from datetime import datetime
 import os
 from discord.ext.commands import MissingRequiredArgument
 import asyncio
+import psycopg2
+from dotenv import load_dotenv
+load_dotenv()
 
 # @greenteamoe
 # Moe#9496
 
-client = commands.Bot(command_prefix='.', help_command=None)
+client = commands.Bot(case_insensitive=True, command_prefix='.', help_command=None)
 ver = 2.0
 
 
@@ -37,7 +40,7 @@ async def pong(ctx):
 async def version(ctx):
     await ctx.send("This bot is currently running at version {0}".format(ver))
     time.sleep(5)
-    await ctx.channel.purge(limit=2)
+    #await ctx.channel.purge(limit=2)
 
 
 @client.command(aliases=['clean', 'prune', 'purge'])
@@ -159,18 +162,25 @@ async def help(ctx):
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send(">>> [ error.**CommandNotFound** ]")
-        await ctx.send("Command not found, try checking .help")
+        em = discord.Embed(title=emoji.emojize(":wrench: Command not found..."),
+                           description="Please, type .help to see all the commands!", color=0xe74c3c)
+        await ctx.send(embed=em)
     elif isinstance(error, commands.MemberNotFound):
-        await ctx.send(">>> [ error.**MemberNotFound** ]")
-        await ctx.send("User not found")
+        em = discord.Embed(title=emoji.emojize(":mag: User not found..."),
+                           description="Please, enter the member name correctly!", color=0xe74c3c)
+        await ctx.send(embed=em)
     elif isinstance(error, commands.BotMissingPermissions):
-        await ctx.send(">>> [ error.**BotMissingPermissions** ]")
-        await ctx.send("Insuficient role permissions to execute this command")
+        em = discord.Embed(title=emoji.emojize(":hammer: Missing permissions..."),
+                           description="The bot is missing permissions!", color=0xe74c3c)
+        await ctx.send(embed=em)
     elif isinstance(error, commands.BadArgument):
-        await ctx.send(">>> [ error.**BadArgument** ] ")
-        await ctx.send("The value must be a number")
-
+        em = discord.Embed(title=emoji.emojize(":no_entry_sign: Bad argument..."),
+                           description="The value must be a number!", color=0xe74c3c)
+        await ctx.send(embed=em)
+    elif isinstance(error, commands.CommandInvokeError):
+        em = discord.Embed(title=emoji.emojize(":closed_lock_with_key: Invoke error..."),
+                           description="The bot is missing permissions!", color=0xe74c3c)
+        await ctx.send(embed=em)
 
 @client.event
 async def on_member_join(member, ctx):
@@ -182,10 +192,8 @@ async def on_member_remove(member, ctx):
     await ctx.send("{0} has left the server.".format(member))
 
 
-pino = 0
 @client.event
 async def on_message(message):
-    global pino
     responses = ['https://media1.tenor.com/images/1c5b339df666dde2a03276e8da9c66bd/tenor.gif?itemid=12660748',
                  'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660742',
                  'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660749',
@@ -196,9 +204,16 @@ async def on_message(message):
                  'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660745']
     if "PINO" in message.content.upper() or "ピノ" in message.content:
         if message.author != client.user:
-            pino += 1
-            await message.channel.send("PINO! Pino's name has been sent {0} times!".format(pino))
+            DATABASE_URL = os.environ['DATABASE_URL']
+            conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+            cursor = conn.cursor()
+            query = "UPDATE pino SET qtd = qtd + 1 WHERE id = 1 RETURNING qtd;"
+            cursor.execute(query)
+            result = cursor.fetchone()
+            conn.commit()
+            conn.close()
+            await message.channel.send("PINO! Pino's name has been sent {0} times!".format(result[0]))
             await message.channel.send(random.choice(responses))
-    await client.process_commands(message)
+            await client.process_commands(message)
 
 client.run('Nzg0OTM2OTkzODgzODE1OTM3.X8wjig.MCRmIXPIq0lmtNYygVp2IE7rWNk')
