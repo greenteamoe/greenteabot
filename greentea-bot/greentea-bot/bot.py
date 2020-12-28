@@ -201,7 +201,15 @@ async def on_message(message):
                  'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660741',
                  'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660754',
                  'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660753',
-                 'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660745']
+                 'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660745',
+                 'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660743',
+                 'https://data.whicdn.com/images/246578964/original.gif',
+                 'https://i.pinimg.com/originals/5b/4b/76/5b4b762b7267fa0919d22a529eac8c16.gif',
+                 'https://giffiles.alphacoders.com/100/100269.gif',
+                 'https://64.media.tumblr.com/310319232ac33a7fa939748fd7b06a78/tumblr_n0rf5mhCL51swmg9to1_r1_500.gif',
+                 'https://i.imgur.com/NeuCKPx.gif',
+                 'https://gifdownload.net/wp-content/uploads/2019/02/ergo-proxy-pino-gif-6.gif']
+                 
     if "PINO" in message.content.upper() or "ピノ" in message.content:
         if message.author != client.user:
             DATABASE_URL = os.environ['DATABASE_URL']
