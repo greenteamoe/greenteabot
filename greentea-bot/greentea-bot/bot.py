@@ -211,7 +211,6 @@ async def on_message(message):
                  'https://pa1.narvii.com/5745/9106409bfcc6e400e4180938de8dfa1484572dc8_hq.gif',
                  'https://i.imgur.com/mcq1ySr.gif',
                  'https://i.imgur.com/cSN73XV.gif',
-                 'https://avatarfiles.alphacoders.com/946/94677.gif',
                  'https://data.whicdn.com/images/246579610/original.gif',
                  'https://i.imgur.com/6GvsrKp.gif',
                  'https://64.media.tumblr.com/fd9d5d4680ad77b0aeeec312293b911a/tumblr_n0kbdh74bo1sfd142o5_500.gif',
