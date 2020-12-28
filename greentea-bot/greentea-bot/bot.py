@@ -205,11 +205,18 @@ async def on_message(message):
                  'https://tenor.com/view/pino-ergo-proxy-galatiosy-darkville-anime-gif-12660743',
                  'https://data.whicdn.com/images/246578964/original.gif',
                  'https://i.pinimg.com/originals/5b/4b/76/5b4b762b7267fa0919d22a529eac8c16.gif',
-                 'https://giffiles.alphacoders.com/100/100269.gif',
                  'https://64.media.tumblr.com/310319232ac33a7fa939748fd7b06a78/tumblr_n0rf5mhCL51swmg9to1_r1_500.gif',
                  'https://i.imgur.com/NeuCKPx.gif',
-                 'https://gifdownload.net/wp-content/uploads/2019/02/ergo-proxy-pino-gif-6.gif']
-                 
+                 'https://gifdownload.net/wp-content/uploads/2019/02/ergo-proxy-pino-gif-6.gif',
+                 'https://pa1.narvii.com/5745/9106409bfcc6e400e4180938de8dfa1484572dc8_hq.gif',
+                 'https://i.imgur.com/mcq1ySr.gif',
+                 'https://i.imgur.com/cSN73XV.gif',
+                 'https://avatarfiles.alphacoders.com/946/94677.gif',
+                 'https://data.whicdn.com/images/246579610/original.gif',
+                 'https://i.imgur.com/6GvsrKp.gif',
+                 'https://64.media.tumblr.com/fd9d5d4680ad77b0aeeec312293b911a/tumblr_n0kbdh74bo1sfd142o5_500.gif',
+                 'https://i.imgur.com/Ymy6JwK.gif']
+
     if "PINO" in message.content.upper() or "ピノ" in message.content:
         if message.author != client.user:
             DATABASE_URL = os.environ['DATABASE_URL']
