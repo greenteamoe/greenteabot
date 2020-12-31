@@ -229,6 +229,6 @@ async def on_message(message):
             conn.close()
             await message.channel.send("PINO! Pino's name has been sent {0} times!".format(result[0]))
             await message.channel.send(random.choice(responses))
-            await client.process_commands(message)
+    await client.process_commands(message)
 
 client.run('Nzg0OTM2OTkzODgzODE1OTM3.X8wjig.MCRmIXPIq0lmtNYygVp2IE7rWNk')
