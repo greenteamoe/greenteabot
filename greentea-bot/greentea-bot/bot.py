@@ -144,7 +144,7 @@ async def help(ctx):
                     value="```ban @user     ""\nunban @user#id      ""\nkick @user      ""\nclear 'value'       ```\n",
                     inline=True)
     embed.add_field(name="Function ",
-                    value="```\nban users         ""\nunban users         ""\nkick users          ""\nclear chat messages         ```",
+                    value="```\nban users         ""\nunban users         ""\nkick users          ""\nclear chat message         ```",
                     inline=True)
 
     await ctx.send(embed=embed)
@@ -153,7 +153,7 @@ async def help(ctx):
                     value="```ping     ""\nver/version         ""\nquestion           \navatar @user           ```",
                     inline=True)
     embed.add_field(name="Function ",
-                    value="```\nshows bot latency""\nchecks current version""\nreplies with a random answer\nshows user avatar\n```",
+                    value="```\nshows bot latency""\nchecks current version""\nreplies using random answers\nshows user avatar\n```",
                     inline=True)
     await ctx.send(embed=embed)
 
