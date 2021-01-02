@@ -153,7 +153,7 @@ async def help(ctx):
                     value="```ping     ""\nver/version         ""\nquestion           \navatar @user           ```",
                     inline=True)
     embed.add_field(name="Function ",
-                    value="```\nshows bot latency""\nchecks current version""\nreplies using random answers\nshows user avatar\n```",
+                    value="```\nshows bot latency""\nchecks current version""\nreplies using random answer\nshows user avatar\n```",
                     inline=True)
     await ctx.send(embed=embed)
 
