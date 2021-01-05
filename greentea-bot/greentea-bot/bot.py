@@ -53,16 +53,22 @@ async def clear(ctx, amount=5):
 
 @client.command()
 async def kick(ctx, member: discord.Member, *, reasons=None):
+    today = date.today()
     await member.kick(reason=reasons)
-    await ctx.send("{0} has been kicked.".format(member.mention))
+    em = discord.Embed(title=emoji.emojize("{0} has been kicked".format(member)),
+    description="*date: {0}*".format(today),
+                       color=0xf0e89e)
+    await ctx.send(embed=em)
 
 
 @client.command()
 async def ban(ctx, member: discord.Member, *, reasons=None):
     today = date.today()
     await member.ban(reason=reasons)
-    await ctx.send("{0} has been banned.".format(member.mention))
-    await ctx.send("{0}".format(today))
+    em = discord.Embed(title=emoji.emojize("{0} has been banned".format(member)),
+    description="*date: {0}*".format(today),
+                       color=0xf0e89e)
+    await ctx.send(embed=em)
 
 
 @client.command()
