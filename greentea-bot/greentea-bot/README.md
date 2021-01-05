@@ -1,6 +1,6 @@
-# greentea Bot
+# greentea bot
 
-greentea Bot for Discord using discord.py!
+greentea bot for Discord using discord.py!
 
 ### Prerequisites and libraries
 
