@@ -98,12 +98,6 @@ async def unban(ctx, *, member):
 
 
 @client.command()
-async def pog(ctx):
-    await ctx.send("shark pog")
-    await ctx.send("https://tenor.com/view/pog-shark-gif-18177920")
-
-
-@client.command()
 async def avatar(ctx, *, avatarmember: discord.Member = None):
     if avatarmember is None:
         avatarmember = ctx.message.author
@@ -163,7 +157,7 @@ async def help(ctx):
                     value="```ping     ""\nver/version         ""\nquestion           \navatar @user           ```",
                     inline=True)
     embed.add_field(name="Function ",
-                    value="```\nshows bot latency""\nchecks current version""\nreplies using random answer\nshows user avatar\n```",
+                    value="```\nshows bot latency""\nchecks current version""\nreplies with random answer\nshows user avatar\n```",
                     inline=True)
     await ctx.send(embed=embed)
 
