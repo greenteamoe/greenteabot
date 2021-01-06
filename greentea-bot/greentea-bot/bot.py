@@ -101,15 +101,16 @@ async def unban(ctx, *, member):
 async def avatar(ctx, *, avatarmember: discord.Member = None):
     if avatarmember is None:
         avatarmember = ctx.message.author
-        em = discord.Embed(title="Full image here",
+        em = discord.Embed(title="Image source",
                            url="https://cdn.discordapp.com/avatars/{0.id}/{0.avatar}?size=1024".format(
                                avatarmember),
+                               description="{0}'s avatar:".format(ctx.message.author.name),
                            color=0x9ef0b2)
         userAvatarUrl = avatarmember.avatar_url
         em.set_image(url=userAvatarUrl)
         await ctx.send(embed=em)
     else:
-        em = discord.Embed(description='requested by:\n{0}'.format(ctx.author), title="Full image here",
+        em = discord.Embed(description='requested by:\n{0}'.format(ctx.author), title="Image source",
                            url="https://cdn.discordapp.com/avatars/{0.id}/{0.avatar}?size=1024".format(
                                avatarmember),
                            color=0x9ef0b2)
