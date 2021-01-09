@@ -23,7 +23,7 @@ ver = 2.0
 async def on_ready():
     await client.change_presence(status=discord.Status.online,
                                  activity=discord.Activity(type=discord.ActivityType.watching, name=emoji.emojize("your server! :eyes: | .help")))
-    print("Bot is ready.")
+    print("The bot is now online!")
 
 
 @client.command()
@@ -236,4 +236,4 @@ async def on_message(message):
             await message.channel.send(random.choice(responses))
     await client.process_commands(message)
 
-client.run('Nzg0OTM2OTkzODgzODE1OTM3.X8wjig.MCRmIXPIq0lmtNYygVp2IE7rWNk')
+client.run(os.getenv('TOKEN'))
