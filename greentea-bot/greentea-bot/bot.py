@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands, tasks
+from typing import Union
 import random
 import time
 import emoji
@@ -103,8 +104,8 @@ async def unban(ctx, *, member):
             await ctx.send(emoji.emojize(":warning: User {0} not found.".format(member)))
 
 
-@client.command()
-async def geturl(ctx, emoji: discord.Emoji): # e = short name to geturl 
+@client.command(aliases=['geturl', 'getemote'])
+async def e(ctx, emoji: Union[discord.Emoji, discord.PartialEmoji]): # e = geturl short name
     await ctx.send(emoji.url)
 
 
