@@ -27,6 +27,7 @@ async def on_ready():
                                  activity=discord.Activity(type=discord.ActivityType.watching, name=emoji.emojize("your server! :eyes: | .help")))
     print("The bot is now online!")
 
+
 @client.command(pass_context = True)
 @commands.is_owner()
 async def admin(ctx):
@@ -199,6 +200,7 @@ async def on_command_error(ctx, error):
                            description="The bot is missing permissions!", color=0xe74c3c)
         await ctx.send(embed=em)
 
+
 @client.event
 async def on_member_join(member, ctx):
     await ctx.send("{0} has joined the server.".format(member))
@@ -247,5 +249,6 @@ async def on_message(message):
             await message.channel.send("PINO! Pino's name has been sent {0} times!".format(result[0]))
             await message.channel.send(random.choice(responses))
     await client.process_commands(message)
+
 
 client.run(os.getenv('TOKEN'))
