@@ -1,30 +1,19 @@
-# greentea bot
+# greenteabot
 
-greentea bot for Discord using discord.py!
+``greenteabot`` is a small Discord bot written in Python with the use of Discord.py framework.
 
-### Prerequisites and libraries
 
-Things you need to run the bot properly:
+### Requires:
 
 ```
-discord.py
-discord.ext
-random
-time
-emoji
-datetime
+- Python 3.5
+- [discord.py](https://github.com/rapptz/discord.py)
+- [emoji](https://pypi.org/project/emoji/)
+- [typing](https://pypi.org/project/typing/)
+- [dotENV](https://pypi.org/project/python-dotenv/)
+and some more...
 ```
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Authors
 
-* **greenteamoe** - *Initial work* - (https://github.com/greenteamoe)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **greenteamoe** - (https://github.com/greenteamoe)
