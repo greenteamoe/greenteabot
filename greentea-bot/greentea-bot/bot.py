@@ -99,6 +99,11 @@ async def unban(ctx, *, member):
 
 
 @client.command()
+async def e(ctx, emoji: discord.Emoji): # e = short name to geturl 
+    await ctx.send(emoji.url)
+
+
+@client.command()
 async def avatar(ctx, *, avatarmember: discord.Member = None):
     if avatarmember is None:
         avatarmember = ctx.message.author
