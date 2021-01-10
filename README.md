@@ -5,14 +5,12 @@
 
 ### Requires:
 
-```
 - Python 3.5
 - [discord.py](https://github.com/rapptz/discord.py)
 - [emoji](https://pypi.org/project/emoji/)
 - [typing](https://pypi.org/project/typing/)
 - [dotENV](https://pypi.org/project/python-dotenv/)
 and some more...
-```
 
 ## Authors
 
