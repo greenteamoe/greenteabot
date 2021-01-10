@@ -17,8 +17,8 @@ load_dotenv()
 # Moe#9496
 
 client = commands.Bot(case_insensitive=True, command_prefix='.', help_command=None)
+client.author_id = os.getenv('AUTHOR_ID')
 ver = 2.0
-client.author_id = 146776822158196736
 
 
 @client.event
