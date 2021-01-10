@@ -14,4 +14,4 @@ and some more...
 
 ## Authors
 
-* **greenteamoe/Moe** - (https://github.com/greenteamoe/Moe#9496)
+* **greenteamoe / Moe** - (https://github.com/greenteamoe) / #Moe#9496
