@@ -26,6 +26,11 @@ async def on_ready():
                                  activity=discord.Activity(type=discord.ActivityType.watching, name=emoji.emojize("your server! :eyes: | .help")))
     print("The bot is now online!")
 
+@client.command(pass_context = True)
+@commands.is_owner()
+async def admin(ctx):
+    await ctx.send('admin command for test purposes')
+
 
 @client.command()
 async def ping(ctx):
@@ -99,7 +104,7 @@ async def unban(ctx, *, member):
 
 
 @client.command()
-async def e(ctx, emoji: discord.Emoji): # e = short name to geturl 
+async def geturl(ctx, emoji: discord.Emoji): # e = short name to geturl 
     await ctx.send(emoji.url)
 
 
