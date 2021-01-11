@@ -16,7 +16,8 @@ and some more...
 
 ## Authors
 
-* **greenteamoe**
-* **twitter:** [@greenteamoe](https://twitter.com/greenteamoe)
-* **reddit:** [greenteamoe](https://www.reddit.com/user/greenteamoe)
-* **discord: Moe#9496**
+**greenteamoe**
+⋅⋅1.
+⋅⋅⋅**twitter:** [@greenteamoe](https://twitter.com/greenteamoe)
+⋅⋅⋅**reddit:** [greenteamoe](https://www.reddit.com/user/greenteamoe)
+⋅⋅⋅**discord: Moe#9496**
