@@ -19,5 +19,6 @@ and some more...
 * **greenteamoe**  
  **twitter:** [@greenteamoe](https://twitter.com/greenteamoe)  
  **reddit:** [greenteamoe](https://www.reddit.com/user/greenteamoe)  
- **discord: Moe#9496**
+ **discord: Moe#9496**  
 
+_Special thanks to NL who helped me fixing bunch of things._
