@@ -2,7 +2,7 @@
 
 ``greenteabot`` is a small Discord bot written in Python with the use of Discord.py framework.
 
-!(http://url/to/carbon.png)
+![](http://url/to/carbon.png)
 
 
 ### Requires:
