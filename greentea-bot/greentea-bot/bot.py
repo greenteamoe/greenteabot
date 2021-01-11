@@ -12,6 +12,10 @@ import asyncio
 import psycopg2
 from dotenv import load_dotenv
 load_dotenv()
+from colorama import init
+from colorama import Fore, Back, Style
+
+init()
 
 # @greenteamoe
 # Moe#9496
