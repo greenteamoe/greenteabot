@@ -2,7 +2,7 @@
 
 ``greenteabot`` is a small Discord bot written in Python with the use of Discord.py framework.
 
-![](https://github.com/greenteamoe/greenteabot/blob/main/code_preview.png)
+![](https://github.com/greenteamoe/greenteabot/blob/main/carbon_code.png)
 
 
 ### Requires:
@@ -16,4 +16,7 @@ and some more...
 
 ## Authors
 
-* **greenteamoe / Moe** - (https://github.com/greenteamoe) / #Moe#9496
+* **greenteamoe**
+* **twitter:** [@greenteamoe](https://twitter.com/greenteamoe)
+* **reddit:** [greenteamoe](https://www.reddit.com/user/greenteamoe)
+* **discord: Moe#9496**
