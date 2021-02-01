@@ -32,6 +32,14 @@ async def on_ready():
     print("\nThe bot is now online!")
 
 
+@client.command(aliases=["quit"])
+@commands.is_owner()
+async def close(ctx):
+    await ctx.send("shutting down in 2 seconds")
+    time.sleep(2)
+    await client.close()
+
+
 @client.command(pass_context = True)
 @commands.is_owner()
 async def admin(ctx):
