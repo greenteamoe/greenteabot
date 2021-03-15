@@ -9,6 +9,7 @@ from datetime import datetime
 import os
 from discord.ext.commands import MissingRequiredArgument
 import asyncio
+from asyncio import sleep
 import psycopg2
 from dotenv import load_dotenv
 load_dotenv()
@@ -222,7 +223,8 @@ async def on_member_join(member, ctx):
 async def on_member_remove(member, ctx):
     await ctx.send("{0} has left the server.".format(member))
 
-
+# Removed due to conflicts with the DataBase, may add it again sometime later. PINO! Pino's name has been sent 344 times!
+'''
 @client.event
 async def on_message(message):
     responses = ['https://media1.tenor.com/images/1c5b339df666dde2a03276e8da9c66bd/tenor.gif?itemid=12660748',
@@ -261,7 +263,7 @@ async def on_message(message):
             await message.channel.send("PINO! Pino's name has been sent {0} times!".format(result[0]))
             await message.channel.send(random.choice(responses))
     await client.process_commands(message)
-
+'''
 
 client.run(os.getenv('TOKEN'))
 # End
